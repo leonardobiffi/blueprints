@@ -75,6 +75,12 @@ variable "vpc_id" {
 }
 
 # Optional
+variable "publicly_accessible" {
+  description = "Bool to control if instance is publicly accessible"
+  type        = bool
+  default     = false
+}
+
 variable "major_engine_version" {
   description = "The RDS parameter group major engine version to use"
   type        = string

@@ -34,6 +34,7 @@ module "rds" {
   backup_window               = var.backup_window
   backup_retention_period     = var.backup_retention_period
   ca_cert_identifier          = var.ca_cert_identifier
+  publicly_accessible         = var.publicly_accessible
 
   # DB subnet group
   create_db_subnet_group = true
