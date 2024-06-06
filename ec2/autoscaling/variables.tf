@@ -133,3 +133,9 @@ variable "schedules" {
   type        = map(any)
   default     = {}
 }
+
+variable "network_interfaces" {
+  description = "Customize network interfaces to be attached at instance boot time"
+  type        = list(any)
+  default     = []
+}

@@ -29,6 +29,7 @@ module "autoscaling" {
   schedules                  = var.schedules
 
   security_groups                 = var.security_groups
+  network_interfaces              = var.network_interfaces
   vpc_zone_identifier             = var.vpc_zone_identifier
   health_check_type               = var.health_check_type
   autoscaling_group_tags          = var.autoscaling_group_tags
