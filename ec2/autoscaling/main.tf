@@ -36,6 +36,7 @@ module "autoscaling" {
   protect_from_scale_in           = var.protect_from_scale_in
   ignore_desired_capacity_changes = true
   create_iam_instance_profile     = true
+  desired_capacity_type           = "units"
 
   iam_role_name        = local.name
   iam_role_description = "ECS role for ${local.name}"
