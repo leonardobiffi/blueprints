@@ -4,7 +4,7 @@ provider "aws" {
 
 locals {
   name        = "${var.env}-${var.name}"
-  full_domain = var.subdomain != "" ? "${var.subdomain}.${var.domain_name}" : var.domain_name
+  full_domain = var.subdomain != null ? "${var.subdomain}.${var.domain_name}" : var.domain_name
 
   tags = merge(var.tags, var.system_tags, {
     Environment = var.env
