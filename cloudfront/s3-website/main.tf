@@ -24,7 +24,7 @@ module "cloudfront" {
   price_class         = "PriceClass_All"
   retain_on_delete    = false
   wait_for_deployment = var.wait_for_deployment
-  default_root_object = "index.html"
+  default_root_object = var.default_root_object
 
   create_origin_access_identity = var.create_origin_access_identity
   origin_access_identities      = var.origin_access_identities
