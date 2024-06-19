@@ -17,6 +17,7 @@ module "alb" {
   name               = local.name
   load_balancer_type = "application"
   internal           = var.internal
+  idle_timeout       = var.idle_timeout
   
   enable_deletion_protection = var.enable_deletion_protection
 

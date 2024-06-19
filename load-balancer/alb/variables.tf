@@ -72,3 +72,9 @@ variable "internal" {
   type        = bool
   default     = false
 }
+
+variable "idle_timeout" {
+  description = "The time in seconds that the connection is allowed to be idle. Only valid for Load Balancers of type `application`. Default: `60`"
+  type        = number
+  default     = null
+}
