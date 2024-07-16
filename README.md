@@ -31,12 +31,12 @@ rds
 
 ## Tools
 
-- (terraform)[https://developer.hashicorp.com/terraform/install] or (opentofu)[https://opentofu.org/docs/intro/install]
-- (terragrunt)[https://terragrunt.gruntwork.io/docs/getting-started/install]
-- (pre-commit)[https://pre-commit.com/#install]
-- (terraform-docs)[https://terraform-docs.io/user-guide/installation]
+- [terraform](https://developer.hashicorp.com/terraform/install) or [opentofu](https://opentofu.org/docs/intro/install)
+- [terragrunt](https://terragrunt.gruntwork.io/docs/getting-started/install)
+- [pre-commit](https://pre-commit.com/#install)
+- [terraform-docs](https://terraform-docs.io/user-guide/installation)
 
-### Installing All With (asdf)[https://asdf-vm.com]
+### Installing All With [asdf](https://asdf-vm.com)
 
 ```
 asdf plugin add <tool>
