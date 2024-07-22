@@ -15,7 +15,7 @@ Ex.:
 rds
 ├── aurora
 │   ├── README.md
-│   ├── example
+│   ├── test
 │   │   └── main.tf
 │   ├── main.tf
 │   ├── outputs.tf
