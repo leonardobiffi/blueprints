@@ -92,6 +92,13 @@ variable "cluster_tags" {
   default     = {}
 }
 
+## Cluster Security Group
+variable "cluster_security_group_additional_rules" {
+  description = "List of additional security group rules to add to the cluster security group created. Set `source_node_security_group = true` inside rules to set the `node_security_group` as source"
+  type        = any
+  default     = {}
+}
+
 ## EKS Managed Node Group
 variable "eks_managed_node_groups" {
   description = "Map of EKS managed node group definitions to create"
@@ -151,6 +158,13 @@ variable "access_entries" {
 
 variable "enable_cluster_creator_admin_permissions" {
   description = "Indicates whether or not to add the cluster creator (the identity used by Terraform) as an administrator via access entry"
+  type        = bool
+  default     = false
+}
+
+## VPC Lattice
+variable "enable_vpc_lattice" {
+  description = "Indicates whether or not to enable VPC Lattice"
   type        = bool
   default     = false
 }

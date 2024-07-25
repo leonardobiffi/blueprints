@@ -73,7 +73,7 @@ variable "role_path" {
 variable "role_requires_mfa" {
   description = "Whether role requires MFA"
   type        = bool
-  default     = true
+  default     = false
 }
 
 variable "attach_admin_policy" {
