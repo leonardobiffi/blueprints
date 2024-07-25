@@ -274,3 +274,9 @@ variable "create_iam_role" {
   type        = bool
   default     = true
 }
+
+variable "assign_public_ip" {
+  description = "Assign a public IP address to the ENI (Fargate launch type only)"
+  type        = bool
+  default     = false
+}

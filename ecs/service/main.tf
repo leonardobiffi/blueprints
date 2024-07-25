@@ -40,6 +40,7 @@ module "ecs_service" {
   deployment_circuit_breaker        = var.deployment_circuit_breaker
   service_registries                = var.service_registries
   requires_compatibilities          = var.launch_type == "EC2" ? ["EC2"] : var.requires_compatibilities
+  assign_public_ip                  = var.assign_public_ip
 
   # Enables ECS Exec
   enable_execute_command = true
