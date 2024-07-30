@@ -1,13 +1,14 @@
 variable "vpc_id" {
   description = "The ID of the VPC"
   type        = string
+  default = ""
 }
 
 variable "subnet_ids" {
   description = "Subnets IDs to associate with the VPC endpoints"
   type        = list(string)
   default     = []
-}
+} 
 
 variable "security_group_ids" {
   description = "List of security group IDs"
@@ -23,9 +24,11 @@ variable "endpoints" {
     private_dns_enabled = optional(bool)
     tags                = map(string)
   }))
+  default = {}
 }
 
 variable "tags" {
   description = "Tags to apply to all resources"
   type        = map(string)
+  default = {}
 }
