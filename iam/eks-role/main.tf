@@ -17,7 +17,7 @@ module "eks_role" {
   role_name                = local.name
   cluster_service_accounts = var.cluster_service_accounts
 
-  role_policy_arns           = length(var.policy_statements) > 0 ? merge({default = module.policy[0].arn}, var.role_policy_arns) : var.role_policy_arns
+  role_policy_arns           = local.additional_policy ? merge({default = module.policy[0].arn}, var.role_policy_arns) : var.role_policy_arns
   force_detach_policies      = var.force_detach_policies
   max_session_duration       = var.max_session_duration
   allow_self_assume_role     = var.allow_self_assume_role
@@ -27,15 +27,19 @@ module "eks_role" {
 }
 
 # Policy
+locals {
+  additional_policy = length(var.policy_statements) > 0 || var.policy != null
+}
+
 module "policy" {
   source  = "terraform-aws-modules/iam/aws//modules/iam-policy"
   version = "~> 5.41"
 
-  count = length(var.policy_statements) > 0 ? 1 : 0
+  count = local.additional_policy ? 1 : 0
 
   name   = "${local.name}-default-policy"
   path   = "/"
-  policy = data.aws_iam_policy_document.policy.json
+  policy = var.policy != null ? jsonencode(var.policy) : data.aws_iam_policy_document.policy.json
 
   tags = local.tags
 }

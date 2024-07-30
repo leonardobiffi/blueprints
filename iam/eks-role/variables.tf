@@ -40,6 +40,12 @@ variable "fullname" {
   default     = null
 }
 
+variable "policy" {
+  description = "IAM policy document to attach to the role"
+  type        = any
+  default     = null  
+}
+
 variable "policy_statements" {
   description = "Policy Statements for Custom Policy"
   type = list(object({
