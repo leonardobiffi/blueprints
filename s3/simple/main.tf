@@ -35,6 +35,8 @@ module "s3" {
   restrict_public_buckets = var.restrict_public_buckets
 
   server_side_encryption_configuration = var.server_side_encryption_configuration
+  control_object_ownership             = var.control_object_ownership
+  object_ownership                     = var.object_ownership
 
   tags = local.tags
 }

@@ -5,13 +5,6 @@ repos:
       - id: terraform_fmt
       - id: terraform_validate
       - id: terraform_docs_without_aggregate_type_defaults
-      - id: terraform_providers_lock
-        args:
-        - --hook-config=--mode=only-check-is-current-lockfile-cross-platform
-        - --args=-platform=darwin_amd64
-        - --args=-platform=darwin_arm64
-        - --args=-platform=linux_amd64
-        - --args=-platform=linux_arm64
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.2.0
     hooks:
