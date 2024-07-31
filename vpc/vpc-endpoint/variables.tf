@@ -1,7 +1,16 @@
+variable "region" {
+  type        = string
+  description = "The AWS region to use"
+}
+
+variable "env" {
+  type        = string
+  description = "The environment to use"
+}
+
 variable "vpc_id" {
   description = "The ID of the VPC"
   type        = string
-  default = ""
 }
 
 variable "subnet_ids" {
@@ -28,7 +37,13 @@ variable "endpoints" {
 }
 
 variable "tags" {
-  description = "Tags to apply to all resources"
+  description = "A map of tags to add to all resources"
   type        = map(string)
-  default = {}
+  default     = {}
+}
+
+variable "system_tags" {
+  description = "System tags to use. Automatically populated by the terragrunt."
+  type        = map(string)
+  default     = {}
 }

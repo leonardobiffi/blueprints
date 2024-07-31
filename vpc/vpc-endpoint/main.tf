@@ -1,12 +1,17 @@
+provider "aws" {
+  region = var.region
+}
+
 locals {
-  tags = {
+  tags = merge(var.tags, var.system_tags, {
+    Environment = var.env
     ManagedBy   = "Terraform"
-  }
+  })
 }
 
 module "endpoints" {
   source = "terraform-aws-modules/vpc/aws//modules/vpc-endpoints"
-  version = "5.9.0"
+  version = "~> 5.5"
 
   vpc_id                = var.vpc_id
   subnet_ids            = var.subnet_ids
