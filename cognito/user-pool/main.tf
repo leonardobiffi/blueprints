@@ -32,8 +32,8 @@ module "cognito_user_pool" {
   auto_verified_attributes = var.auto_verified_attributes
 
   sms_configuration = {
-    external_id     = var.sms_configuration_external_id
-    sns_caller_arn  = var.sms_configuration_external_id != null ? aws_iam_role.sms[0].arn : null
+    external_id    = var.sms_configuration_external_id
+    sns_caller_arn = var.sms_configuration_external_id != null ? aws_iam_role.sms[0].arn : null
   }
 
   device_configuration                                       = var.device_configuration
@@ -133,7 +133,7 @@ data "aws_iam_policy_document" "sms" {
   count = var.sms_configuration_external_id != null ? 1 : 0
 
   statement {
-    effect = "Allow"
+    effect  = "Allow"
     actions = ["sts:AssumeRole"]
     principals {
       type        = "Service"
@@ -149,7 +149,7 @@ data "aws_iam_policy_document" "sms" {
 
 resource "aws_iam_role" "sms" {
   count = var.sms_configuration_external_id != null ? 1 : 0
-  
+
   name               = "${local.name}-cognito-sms"
   assume_role_policy = data.aws_iam_policy_document.sms[0].json
 }

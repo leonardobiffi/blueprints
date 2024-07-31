@@ -35,12 +35,12 @@ variable "name" {
 # Optional
 variable "cognito_identity_providers" {
   description = "The list of Cognito Identity Providers"
-  type        = list(object({
+  type = list(object({
     client_id               = string
     provider_name           = string
     server_side_token_check = bool
   }))
-  default     = []
+  default = []
 }
 
 variable "allow_unauthenticated_identities" {
@@ -63,7 +63,7 @@ variable "supported_login_providers" {
 
 variable "roles" {
   description = "The roles to use"
-  type        = object({
+  type = object({
     authenticated   = optional(bool, false)
     unauthenticated = optional(bool, false)
   })
@@ -72,7 +72,7 @@ variable "roles" {
 
 variable "role_mapping" {
   description = "The list of role mapping to use"
-  type        = list(object({
+  type = list(object({
     ambiguous_role_resolution = string
     identity_provider         = string
     type                      = string

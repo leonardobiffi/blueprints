@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 locals {
-  name        = "${var.env}-${var.name}"
+  name = "${var.env}-${var.name}"
   tags = merge(var.tags, var.system_tags, {
     Name        = local.name
     Environment = var.env

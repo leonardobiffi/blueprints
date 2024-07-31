@@ -9,10 +9,15 @@ module "ecs_cluster" {
   create_cloudwatch_log_group = false
   container_insights          = "disabled"
 
-  fargate_capacity_weight      = 0
-  fargate_capacity_base        = 0
-  fargate_spot_capacity_weight = 5
-  fargate_spot_capacity_base   = 1
+  fargate_capacity_providers = {
+    FARGATE = {
+      weight = 1
+      base   = 1
+    }
+    FARGATE_SPOT = {
+      weight = 4
+    }
+  }
 
   tags = {
     ManagedBy = "Terraform"

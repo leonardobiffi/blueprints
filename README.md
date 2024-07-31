@@ -15,7 +15,7 @@ Ex.:
 rds
 ├── aurora
 │   ├── README.md
-│   ├── example
+│   ├── test
 │   │   └── main.tf
 │   ├── main.tf
 │   ├── outputs.tf
@@ -43,3 +43,11 @@ asdf plugin add <tool>
 asdf install <tool> latest
 asdf global <tool> latest
 ```
+
+## Development
+
+Enable `pre-commit` in repository
+
+```sh
+pre-commit install
+``` 

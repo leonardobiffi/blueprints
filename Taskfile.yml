@@ -1,0 +1,23 @@
+# https://taskfile.dev
+version: '3'
+
+vars:
+  WELCOME: 🎉 Welcome to Terraform Stacks Repository ¯\_(ツ)_/¯
+
+tasks:
+  default:
+    cmds:
+      - echo "{{.WELCOME}}"
+      - echo ""
+      - echo "Run 'task --list' to see available tasks"
+    silent: true
+
+  find-test:
+    desc: Find test directories of stacks
+    cmds:
+      - find . -maxdepth 5 -type d -name test
+
+  validate:
+    desc: Validate all Terraform stacks and generate Docs
+    cmds:
+      - pre-commit run --all-files

@@ -36,11 +36,11 @@ variable "name" {
 variable "policy_statements" {
   description = "Policy Statements"
   type = list(object({
-    sid        = optional(string)
-    effect     = string
-    actions    = optional(list(string))
+    sid         = optional(string)
+    effect      = string
+    actions     = optional(list(string))
     not_actions = optional(list(string))
-    resources  = list(string)
+    resources   = list(string)
     conditions = optional(list(object({
       test     = string
       variable = string

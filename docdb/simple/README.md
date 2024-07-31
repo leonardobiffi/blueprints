@@ -6,7 +6,7 @@
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.2 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 4.55 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 5.33 |
 
 ## Providers
 
@@ -16,8 +16,7 @@ No providers.
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_documentdb"></a> [documentdb](#module\_documentdb) | cloudposse/documentdb-cluster/aws | 0.15.0 |
-| <a name="module_ssm"></a> [ssm](#module\_ssm) | cloudposse/ssm-parameter-store/aws | 0.10.0 |
+| <a name="module_documentdb"></a> [documentdb](#module\_documentdb) | cloudposse/documentdb-cluster/aws | ~> 0.25 |
 
 ## Resources
 
@@ -45,7 +44,6 @@ No resources.
 | <a name="input_master_password"></a> [master\_password](#input\_master\_password) | (Required unless a snapshot\_identifier is provided) Password for the master DB user. Note that this may show up in logs, and it will be stored in the state file. Please refer to the DocumentDB Naming Constraints | `string` | n/a | yes |
 | <a name="input_master_username"></a> [master\_username](#input\_master\_username) | (Required unless a snapshot\_identifier is provided) Username for the master DB user | `string` | n/a | yes |
 | <a name="input_name"></a> [name](#input\_name) | The name of the resource | `string` | n/a | yes |
-| <a name="input_parameter_name"></a> [parameter\_name](#input\_parameter\_name) | The name of the parameter for URL and port | <pre>object({<br>    url  = string<br>    port = string<br>  })</pre> | <pre>{<br>  "port": "DATABASE_PORT",<br>  "url": "DATABASE_URL"<br>}</pre> | no |
 | <a name="input_preferred_backup_window"></a> [preferred\_backup\_window](#input\_preferred\_backup\_window) | Daily time range during which the backups happen | `string` | `"07:00-09:00"` | no |
 | <a name="input_preferred_maintenance_window"></a> [preferred\_maintenance\_window](#input\_preferred\_maintenance\_window) | The window to perform maintenance in. Syntax: `ddd:hh24:mi-ddd:hh24:mi`. | `string` | `"Mon:22:00-Mon:23:00"` | no |
 | <a name="input_region"></a> [region](#input\_region) | The AWS region to use | `string` | n/a | yes |
