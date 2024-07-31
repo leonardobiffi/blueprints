@@ -45,7 +45,7 @@ module "aurora" {
   }
 
   instance_class = "db.t3.small"
-  
+
   instances = {
     1 = {}
   }

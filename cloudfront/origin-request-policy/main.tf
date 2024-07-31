@@ -14,7 +14,7 @@ locals {
 resource "aws_cloudfront_origin_request_policy" "main" {
   name    = local.name
   comment = var.comment
-  
+
   cookies_config {
     cookie_behavior = var.cookies_config.cookie_behavior
     cookies {

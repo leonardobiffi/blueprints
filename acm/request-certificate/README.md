@@ -5,8 +5,8 @@
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.2 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 4.55 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.6 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 5.46 |
 
 ## Providers
 
@@ -16,7 +16,7 @@ No providers.
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_acm"></a> [acm](#module\_acm) | terraform-aws-modules/acm/aws | ~> 4.0 |
+| <a name="module_acm"></a> [acm](#module\_acm) | terraform-aws-modules/acm/aws | ~> 5.0 |
 
 ## Resources
 
@@ -33,7 +33,7 @@ No resources.
 | <a name="input_region"></a> [region](#input\_region) | The AWS region to use | `string` | n/a | yes |
 | <a name="input_subject_alternative_names"></a> [subject\_alternative\_names](#input\_subject\_alternative\_names) | The subject alternative names to use | `list(any)` | `[]` | no |
 | <a name="input_system_tags"></a> [system\_tags](#input\_system\_tags) | System tags to use. Automatically populated by the terragrunt. | `map(string)` | `{}` | no |
-| <a name="input_tags"></a> [tags](#input\_tags) | Additional tags to use | `map(string)` | `{}` | no |
+| <a name="input_tags"></a> [tags](#input\_tags) | A map of tags to add to all resources | `map(string)` | `{}` | no |
 | <a name="input_validate_certificate"></a> [validate\_certificate](#input\_validate\_certificate) | Whether to validate certificate by creating Route53 record | `bool` | `true` | no |
 | <a name="input_wait_for_validation"></a> [wait\_for\_validation](#input\_wait\_for\_validation) | Whether to wait for validation | `bool` | `true` | no |
 | <a name="input_zone_id"></a> [zone\_id](#input\_zone\_id) | The zone ID to use | `string` | `""` | no |

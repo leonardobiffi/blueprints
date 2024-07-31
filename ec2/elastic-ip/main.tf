@@ -10,7 +10,7 @@ locals {
   })
 }
 
-resource "aws_eip" "main" { 
+resource "aws_eip" "main" {
   instance = var.instance_id
   domain   = var.domain
 

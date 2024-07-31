@@ -42,7 +42,7 @@ variable "repository_type" {
 variable "repository_lifecycle_policy" {
   description = "The lifecycle policy to apply to the repository"
   type        = any
-  default     = null 
+  default     = null
 }
 
 variable "repository_image_tag_mutability" {
@@ -54,5 +54,5 @@ variable "repository_image_tag_mutability" {
 variable "repository_policy" {
   description = "The policy to apply to the repository"
   type        = string
-  default     = null 
+  default     = null
 }

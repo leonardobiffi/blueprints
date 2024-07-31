@@ -182,7 +182,7 @@ variable "scaling_configuration" {
 variable "serverlessv2_scaling_configuration" {
   description = "Map of nested attributes with serverless v2 scaling properties. Only valid when `engine_mode` is set to `provisioned`"
   type        = map(string)
-  default     = {
+  default = {
     min_capacity = 0.5
     max_capacity = 1
   }

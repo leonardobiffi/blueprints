@@ -1,4 +1,4 @@
-# Route53 | Records
+# VPC | VPC Endpoint
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
@@ -16,7 +16,7 @@ No providers.
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_records"></a> [records](#module\_records) | terraform-aws-modules/route53/aws//modules/records | ~> 2.0 |
+| <a name="module_endpoints"></a> [endpoints](#module\_endpoints) | terraform-aws-modules/vpc/aws//modules/vpc-endpoints | ~> 5.5 |
 
 ## Resources
 
@@ -26,19 +26,18 @@ No resources.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| <a name="input_endpoints"></a> [endpoints](#input\_endpoints) | Map of endpoint configurations | <pre>map(object({<br>    service             = string<br>    route_table_ids     = optional(list(string))<br>    private_dns_enabled = optional(bool)<br>    tags                = map(string)<br>  }))</pre> | `{}` | no |
 | <a name="input_env"></a> [env](#input\_env) | The environment to use | `string` | n/a | yes |
-| <a name="input_private_zone"></a> [private\_zone](#input\_private\_zone) | Whether Route53 zone is private or public | `bool` | `false` | no |
-| <a name="input_records"></a> [records](#input\_records) | List of objects of DNS records | `any` | n/a | yes |
 | <a name="input_region"></a> [region](#input\_region) | The AWS region to use | `string` | n/a | yes |
+| <a name="input_security_group_ids"></a> [security\_group\_ids](#input\_security\_group\_ids) | List of security group IDs | `list(string)` | `[]` | no |
+| <a name="input_subnet_ids"></a> [subnet\_ids](#input\_subnet\_ids) | Subnets IDs to associate with the VPC endpoints | `list(string)` | `[]` | no |
 | <a name="input_system_tags"></a> [system\_tags](#input\_system\_tags) | System tags to use. Automatically populated by the terragrunt. | `map(string)` | `{}` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | A map of tags to add to all resources | `map(string)` | `{}` | no |
-| <a name="input_zone_id"></a> [zone\_id](#input\_zone\_id) | ID of DNS zone | `string` | `null` | no |
-| <a name="input_zone_name"></a> [zone\_name](#input\_zone\_name) | Name of DNS zone | `string` | `null` | no |
+| <a name="input_vpc_id"></a> [vpc\_id](#input\_vpc\_id) | The ID of the VPC | `string` | n/a | yes |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| <a name="output_route53_record_fqdn"></a> [route53\_record\_fqdn](#output\_route53\_record\_fqdn) | FQDN built using the zone domain and name |
-| <a name="output_route53_record_name"></a> [route53\_record\_name](#output\_route53\_record\_name) | The name of the record |
+| <a name="output_endpoints"></a> [endpoints](#output\_endpoints) | Array containing the full resource object and attributes for all endpoints created |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

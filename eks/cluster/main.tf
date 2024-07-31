@@ -57,11 +57,11 @@ locals {
   # add vpc lattice prefix to the cluster security group
   cluster_security_group_additional_rules = var.enable_vpc_lattice ? merge(var.cluster_security_group_additional_rules, {
     vpc_lattice = {
-      description     = "Allow traffic from VPC Lattice"
-      type            = "ingress"
-      from_port       = 0
-      to_port         = 65535
-      protocol        = "tcp"
+      description = "Allow traffic from VPC Lattice"
+      type        = "ingress"
+      from_port   = 0
+      to_port     = 65535
+      protocol    = "tcp"
       prefix_list_ids = [
         data.aws_ec2_managed_prefix_list.lattice[0].id,
         data.aws_ec2_managed_prefix_list.lattice_ipv6[0].id

@@ -51,7 +51,7 @@ variable "domain_name" {
 variable "default_root_object" {
   description = "The default root object to use"
   type        = string
-  default     = "index.html" 
+  default     = "index.html"
 }
 
 variable "minimum_protocol_version" {

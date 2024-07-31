@@ -5,8 +5,8 @@
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.2 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 4.20 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.6 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 5.46 |
 
 ## Providers
 
@@ -16,7 +16,7 @@ No providers.
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_zones"></a> [zones](#module\_zones) | terraform-aws-modules/route53/aws//modules/zones | ~> 2.0 |
+| <a name="module_zones"></a> [zones](#module\_zones) | terraform-aws-modules/route53/aws//modules/zones | ~> 2.11 |
 
 ## Resources
 
@@ -29,7 +29,7 @@ No resources.
 | <a name="input_env"></a> [env](#input\_env) | The environment to use | `string` | n/a | yes |
 | <a name="input_region"></a> [region](#input\_region) | The AWS region to use | `string` | n/a | yes |
 | <a name="input_system_tags"></a> [system\_tags](#input\_system\_tags) | System tags to use. Automatically populated by the terragrunt. | `map(string)` | `{}` | no |
-| <a name="input_tags"></a> [tags](#input\_tags) | Additional tags to use | `map(string)` | `{}` | no |
+| <a name="input_tags"></a> [tags](#input\_tags) | A map of tags to add to all resources | `map(string)` | `{}` | no |
 | <a name="input_zones"></a> [zones](#input\_zones) | Map of Route53 zone parameters | <pre>list(object({<br>    name    = string<br>    comment = optional(string)<br>    tags    = optional(map(string))<br>  }))</pre> | n/a | yes |
 
 ## Outputs

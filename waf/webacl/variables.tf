@@ -83,7 +83,7 @@ variable "redacted_fields" {
     query_string  = optional(bool, false)
     single_header = optional(list(string), null)
   }))
-  default     = {
+  default = {
     method = {
       method = true
     }

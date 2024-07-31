@@ -6,7 +6,7 @@
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.2 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 4.15 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 5.46 |
 | <a name="requirement_awsutils"></a> [awsutils](#requirement\_awsutils) | ~> 0.16 |
 
 ## Providers
@@ -17,7 +17,7 @@ No providers.
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_ses"></a> [ses](#module\_ses) | cloudposse/ses/aws | 0.24.0 |
+| <a name="module_ses"></a> [ses](#module\_ses) | cloudposse/ses/aws | ~> 0.25 |
 
 ## Resources
 

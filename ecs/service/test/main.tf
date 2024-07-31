@@ -18,7 +18,7 @@ module "ecs_cluster" {
       weight = 4
     }
   }
-  
+
   tags = {
     ManagedBy = "Terraform"
   }

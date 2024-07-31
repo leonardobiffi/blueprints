@@ -43,7 +43,7 @@ variable "fullname" {
 variable "policy" {
   description = "IAM policy document to attach to the role"
   type        = any
-  default     = null  
+  default     = null
 }
 
 variable "policy_statements" {
